@@ -23,11 +23,14 @@ function Home() {
             Agence Internationale
           </Link>
         </div>
-        <input
-          type="checkbox"
-          value="synthwave"
-          className="toggle theme-controller"
-        />
+        <div>
+          <input
+            type="checkbox"
+            value="synthwave"
+            className="toggle theme-controller"
+          />
+        </div>
+
         <div className="flex-none">
           <Link to="/login" className="btn btn-primary">
             Se connecter
