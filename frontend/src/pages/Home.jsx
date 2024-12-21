@@ -11,13 +11,14 @@ import {
   HeartHandshake,
   Settings2,
   CheckCircle2,
+  Menu,
 } from "lucide-react";
 
 function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* NAVBAR */}
-      <header className="navbar bg-base-100 shadow px-4">
+      {/* <header className="navbar bg-base-100 shadow px-4">
         <div className="flex-1">
           <Link to="/" className="btn btn-ghost normal-case text-xl font-bold">
             Agence Internationale
@@ -28,6 +29,58 @@ function Home() {
           <Link to="/login" className="btn btn-primary">
             Se connecter
           </Link>
+        </div>
+      </header> */}
+
+      <header className="navbar bg-base-100 shadow px-4">
+        {/* Partie gauche : Logo / Titre */}
+        <div className="flex-1">
+          <Link to="/" className="btn btn-ghost normal-case text-xl font-bold">
+            Agence Internationale
+          </Link>
+        </div>
+
+        {/* Partie droite : Menu desktop + dropdown mobile */}
+        <div className="flex-none">
+          {/* Menu pour mobile : hamburger (lg:hidden) */}
+          <div className="dropdown dropdown-end lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost">
+              <Menu size={20} />
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50"
+            >
+              <li className="flex items-center">
+                {/* Toggle de thème si besoin */}
+                <label className="label cursor-pointer">
+                  <span>Thème</span>
+                  <input
+                    type="checkbox"
+                    value="synthwave"
+                    className="toggle theme-controller ml-2"
+                  />
+                </label>
+              </li>
+              <li>
+                <Link to="/login">Se connecter</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Menu pour desktop : affiché sur écrans larges (hidden sur mobile) */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Toggle de thème (optionnel) */}
+            <input
+              type="checkbox"
+              value="synthwave"
+              className="toggle theme-controller"
+            />
+            {/* Bouton Se connecter */}
+            <Link to="/login" className="btn btn-primary">
+              Se connecter
+            </Link>
+          </div>
         </div>
       </header>
 
