@@ -68,7 +68,9 @@ exports.getProceduresByClient = async (req, res) => {
 exports.getAllProcedures = async (req, res) => {
   if (req.user.role !== 'admin') return res.status(403).json({ error: 'Accès refusé' });
   try {
-    const procedures = await Procedure.find().populate('client', 'numeroClient').populate('contrat');
+    const procedures = await Procedure.find()
+      .populate('client', 'nom prenom passportNumber') // Inclure nom, prénom et numéro de passeport
+      .populate('contrat', 'nom'); // Inclure le nom du contrat
     res.json(procedures);
   } catch (error) {
     res.status(500).json({ error: 'Erreur interne' });

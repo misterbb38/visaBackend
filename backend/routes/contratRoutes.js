@@ -2,9 +2,17 @@
 const express = require('express');
 const router = express.Router();
 const auth = require('../middlewares/authMiddleware');
-const { createContrat, getAllContrats } = require('../controllers/contratController');
+const {
+  createContrat,
+  getAllContrats,
+  updateContrat,
+  deleteContrat
+} = require('../controllers/contratController');
 
-router.post('/', auth, createContrat);
-router.get('/all', auth, getAllContrats);
+// Admin : create, update, delete, get all
+router.post('/', auth, createContrat);           // Création
+router.get('/all', auth, getAllContrats);        // Lecture (liste)
+router.put('/:contratId', auth, updateContrat);  // Mise à jour
+router.delete('/:contratId', auth, deleteContrat); // Suppression
 
 module.exports = router;
