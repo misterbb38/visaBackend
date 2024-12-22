@@ -254,7 +254,7 @@ function ProceduresList() {
                 {proc.client?.prenom} {proc.client?.nom}
               </h2>
               <p className="text-sm mb-2">
-                <strong>Date :</strong> {formatDate(proc.createdAt)}
+                <strong>Date:</strong> {formatDate(proc.createdAt)}
               </p>
               <p className="text-sm mb-2">
                 <strong>Numéro Passeport :</strong>{" "}
