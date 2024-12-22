@@ -246,10 +246,7 @@ function ProceduresList() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {procedures.map((proc) => (
-            <div
-              key={proc._id}
-              className="card bg-white shadow-md p-4 rounded-md"
-            >
+            <div key={proc._id} className="card  shadow-md p-4 rounded-md">
               <h2 className="font-bold text-lg mb-2">
                 {proc.client?.prenom} {proc.client?.nom}
               </h2>
@@ -261,7 +258,10 @@ function ProceduresList() {
                 {proc.client?.passportNumber}
               </p>
               <p className="text-sm mb-2">
-                <strong>Contrat :</strong> {proc.type}
+                <strong>Contrat :</strong> {proc.contrat.nom}
+              </p>
+              <p className="text-sm mb-2">
+                <strong>Type de contrat :</strong> {proc.type}
               </p>
               <p className="text-sm mb-2">
                 <strong>Étape Courante :</strong> {proc.etapeCourante}
