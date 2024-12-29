@@ -50,9 +50,9 @@ exports.createContrat = async (req, res) => {
 
 exports.getAllContrats = async (req, res) => {
   // Seul un admin peut afficher tous les contrats
-  if (req.user.role !== 'admin') {
-    return res.status(403).json({ error: 'Accès refusé' });
-  }
+  // if (req.user.role !== 'admin') {
+  //   return res.status(403).json({ error: 'Accès refusé' });
+  // }
   try {
     const contrats = await Contrat.find();
     res.json(contrats);
@@ -101,3 +101,6 @@ exports.deleteContrat = async (req, res) => {
     res.status(500).json({ error: 'Erreur lors de la suppression du contrat' });
   }
 };
+
+
+
