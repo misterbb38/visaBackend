@@ -1036,7 +1036,7 @@ function Home() {
             </div>
             <div className="flex items-center">
               <Mail size={20} className="mr-2 text-secondary" />
-              <span className="text-sm">contact@agence-intl.com</span>
+              <span className="text-sm">worldwidevision142@gmail.com</span>
             </div>
           </div>
         </div>
